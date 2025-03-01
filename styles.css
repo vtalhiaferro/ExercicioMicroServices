@@ -1,0 +1,13 @@
+body {
+    background-color: azure;
+}
+
+.temaEscuro {
+    background-color: rgb(6, 25, 46);
+    color: azure;
+}
+
+.temaClaro {
+    background-color: rgb(150, 150, 150);
+    color: black;
+}
