@@ -127,12 +127,19 @@
         objetoResponse.mensagem = "Ola, este é um retorno de teste";
 
         function trazerObjetoResponse() {
-            fetch("http://67bfa426b9d02a9f2246c131.mockapi.io/mensagem")
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data);
-                    document.getElementById("mostrarMensagem").innerHTML = data[4].mensagem + " - id: " + data[4].id;
-                });
+    fetch("http://67bfa426b9d02a9f2246c131.mockapi.io/mensagem")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data); 
+            if (data.length > 15) { 
+                document.getElementById("mostrarMensagem").innerHTML = id[15].mensagem + " - id: " + id[15].id;
+            } else {
+                console.error("O array não tem o índice 15.");
+            }
+        })
+        .catch(error => {
+            console.error("Erro ao buscar os dados:", error);
+        });
         }
 
         function cadastrarUsuario() {
